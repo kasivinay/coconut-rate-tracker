@@ -23,19 +23,19 @@ with app.app_context():
 
     from models.rate import Rate
 
-    if Rate.query.count() == 0:
+ #   if Rate.query.count() == 0:
 
-        sample_rate = Rate(
-            date="17-Jun-2026",
-            market="Amalapuram",
-            rate_per_coconut=17,
-            remarks="Stable Market"
-        )
+ #       sample_rate = Rate(
+  #          date="17-Jun-2026",
+  #          market="Amalapuram",
+ #           rate_per_coconut=17,
+ #           remarks="Stable Market"
+ #       )
 
-        db.session.add(sample_rate)
-        db.session.commit()
+ #       db.session.add(sample_rate)
+ #       db.session.commit()
 
-        print("Sample Data Inserted")
+ #       print("Sample Data Inserted")
 
 if __name__ == "__main__":
     app.run(debug=True)

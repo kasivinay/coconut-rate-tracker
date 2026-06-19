@@ -1,10 +1,13 @@
-class Config:
-    SECRET_KEY = "coconut-rate-secret"
+import os
 
-    SQLALCHEMY_DATABASE_URI = "sqlite:///coconut_rates.db"
+class Config:
+
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    ADMIN_USERNAME = "vinay"
+    ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME")
 
-    ADMIN_PASSWORD = "saiVINAY@96"
+    ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
