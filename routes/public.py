@@ -103,8 +103,8 @@ def home():
 
         language=language,
 
-        latest_rate=None,
-        yesterday_rate=None,
+        latest_rate=latest_rate,
+        yesterday_rate=yesterday_rate,
         difference=difference,
         weekly_avg=weekly_avg,
         highest_rate=highest_rate,
