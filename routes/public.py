@@ -91,19 +91,20 @@ def home():
 
     from datetime import datetime
 
-    formatted_date = datetime.strptime(
-        latest_rate.date,
-        "%Y-%m-%d"
-    ).strftime(
-        "%d-%b-%Y"
-    )
+    formatted_date = ""
+
+    if latest_rate:
+        try:
+            formatted_date = latest_rate.date
+        except:
+            formatted_date = ""
     return render_template(
         "home.html",
 
         language=language,
 
-        latest_rate=latest_rate,
-        yesterday_rate=yesterday_rate,
+        latest_rate=None,
+        yesterday_rate=None,
         difference=difference,
         weekly_avg=weekly_avg,
         highest_rate=highest_rate,
