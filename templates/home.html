@@ -84,8 +84,18 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 {% endif %}
 
     <h2 class="rate-display">
-        ₹{{ "%.2f"|format(latest_rate.rate_per_coconut) }}
-    </h2>
+
+{% if latest_rate %}
+
+    ₹{{ "%.2f"|format(latest_rate.rate_per_coconut) }}
+
+{% else %}
+
+    ₹0.00
+
+{% endif %}
+
+</h2>
 
     <div class="hero-trend">
 
@@ -155,7 +165,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
         {% endif %}
 
-        {{ latest_rate.market }}
+        {{ latest_rate.market if latest_rate else "No Data" }}}
 
     </p>
 
@@ -171,7 +181,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
             {% endif %}
 
-            {{ formatted_date }}
+            {{ formatted_date if formatted_date else "-" }}
 
     </p>
 
