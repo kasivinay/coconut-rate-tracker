@@ -62,11 +62,14 @@ def home():
         for r in rates
     ) if rates else 0
 
-    monthly_avg = round(
-        sum(r.rate_per_coconut for r in rates)
-        / len(rates),
-        2
-    )
+    monthly_avg = 0
+
+    if rates:
+        monthly_avg = round(
+            sum(r.rate_per_coconut for r in rates)
+            / len(rates),
+            2
+        )
 
     from datetime import datetime
 
