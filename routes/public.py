@@ -98,6 +98,14 @@ def home():
             formatted_date = latest_rate.date
         except:
             formatted_date = ""
+    if trend == "UP":
+        trend_text = "Positive"
+
+    elif trend == "DOWN":
+        trend_text = "Negative"
+
+    else:
+        trend_text = "Stable"
     return render_template(
         "home.html",
 
@@ -114,5 +122,6 @@ def home():
         chart_labels=chart_labels,
         chart_rates=chart_rates,
         formatted_date= formatted_date,
+        trend_text=trend_text,
         rates=rates
     )

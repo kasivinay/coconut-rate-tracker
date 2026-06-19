@@ -40,7 +40,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
     {% else %}
 
         <a href="/?lang=en" class="btn btn-outline-light">
-                🇬🇧 English
+                 English
         </a>
 
         <a href="/?lang=te" class="btn btn-success">
@@ -349,6 +349,35 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
         </div>
 
+    </div>
+
+</div>
+
+
+<div class="market-insights">
+
+    <h3>📢 Market Insights</h3>
+
+    <div class="insight-item">
+        {% if difference > 0 %}
+            • Rate increased ₹{{ difference }} compared to yesterday
+        {% elif difference < 0 %}
+            • Rate decreased ₹{{ difference|abs }} compared to yesterday
+        {% else %}
+            • No change compared to yesterday
+        {% endif %}
+    </div>
+
+    <div class="insight-item">
+        • Weekly average is ₹{{ weekly_avg }}
+    </div>
+
+    <div class="insight-item">
+        • Highest rate recorded is ₹{{ highest_rate }}
+    </div>
+
+    <div class="insight-item">
+        • Current market trend is {{ trend_text }}
     </div>
 
 </div>

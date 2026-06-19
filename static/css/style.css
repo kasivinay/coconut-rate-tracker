@@ -196,6 +196,48 @@ body{
     margin-bottom:25px;
 }
 
+
+.market-insights{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    margin-top:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+}
+
+.market-insights h3{
+
+    color:#14532d;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.insight-item{
+
+    font-size:18px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #e5e7eb;
+
+    color:#334155;
+
+}
+
+.insight-item:last-child{
+
+    border-bottom:none;
+
+}
 /* TABLE */
 
 .table-card{
